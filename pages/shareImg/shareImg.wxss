@@ -1,0 +1,35 @@
+/* pages/shareImg/shareImg.wxss */
+page{
+  background: black;
+}
+.listItem{
+  margin-top: 20rpx;
+}
+.scroll-view_H{
+  display: flex;
+  white-space: nowrap;
+}
+image{
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 10rpx;
+  background: #fff;
+}
+.style-button{
+  margin-top: 20rpx;
+  padding: 0 10rpx;
+  border-top: 4rpx solid #ff66 
+}
+.style-button wx-view{
+  margin-top: 30rpx;
+}
+.canvas-style{
+  border: 5px solid black;
+  border-radius: 20px;
+  background: black;
+}
+.act{
+  border: 3px solid orange;
+  border-radius: 5px;
+}

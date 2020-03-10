@@ -1,0 +1,49 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/test/test",
+    "pages/cardDetails/cardDetails",
+    "pages/zhaoShengXianSuo/zhaoShengXianSuo",
+    "pages/jiGouXinXi/jiGouXinXi",
+    "pages/chuangJianCollection/chuangJianCollection",
+    "pages/myHuiGuan/myHuiGuan",
+    "pages/uploadWork/uploadWork",
+    "pages/workDetails/workDetails",
+    "pages/myCollection/myCollection",
+    "pages/userSetting/userSetting",
+    "pages/my/my",
+    "pages/myStudents/myStudents",
+    "pages/studentDetails/studentDetails",
+    "pages/xiuGaiCollection/xiuGaiCollection",
+    "pages/shareImg/shareImg",
+    "pages/myTeacher/myTeacher",
+    "pages/students/students"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fdb102",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#898989",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/home.png",
+        "selectedIconPath": "./images/home_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./images/my.png",
+        "selectedIconPath": "./images/my_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

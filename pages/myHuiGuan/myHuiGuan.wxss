@@ -1,0 +1,125 @@
+.myHuiGuanPage{
+    padding: 30rpx;
+    border-top: 2px solid #eee;
+}
+
+.nodate-conatiner{
+    margin: 100rpx 0;
+    color: #E8E7E7;
+    text-align: center;
+}
+.nodata-icon{
+    color: #ccc;
+    font-size: 200rpx;
+}
+.nodata-logo{
+    width: 202rpx;
+    height: 174rpx;
+}
+.nodata-info-title{
+    margin: 20rpx 0; 
+    font-size: 30rpx;
+}
+.nodata-info-titleText{
+    font-size: 22rpx;
+}
+
+
+.list-conatiner{
+    margin-bottom: 170rpx;
+}
+.list-item{
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 40rpx;
+    display: flex;
+    flex-direction: row;
+}
+.listItem-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 52rpx 36rpx;
+    width: 200rpx;
+    min-width: 200rpx;
+    height: 260rpx;
+    object-fit: cover;
+    border: 1px solid #fff;
+    border-radius: 4rpx;
+    box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.35);
+}
+/* .listItem-img image{
+    box-sizing: border-box;
+    padding: 52rpx 36rpx;
+    width: 200rpx;
+    height: 260rpx;
+    border-radius: 4rpx;
+} */
+.listItem-info{
+    box-sizing: border-box;
+    padding-left: 220rpx;
+    padding-top: 10rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 260rpx;
+}
+.listItem-top{
+    display: flex;
+    
+    justify-content: space-between;
+}
+.listItemInfo-top-title{
+    display: inline-block;
+    width: 100%;
+    color: #333;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.listItemInfo-top-avater{
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+}
+.listItemInfo-top-icon{
+    display: flex;
+    color: #999;
+    font-size: 24rpx;
+    align-items: center;
+
+}
+.listItem-Info-Desc{
+    margin-top: 10rpx;
+    color: #666;
+    font-size: 24rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.hasdata-submit-btn{
+    position: fixed;
+    left: 50%;
+    bottom: 54rpx;
+    transform: translate(-50%);
+}
+
+.imgNum{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.imgNum image{
+  width: 20px;
+  height: 20px;
+}
+.imgNum text{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 200;
+}

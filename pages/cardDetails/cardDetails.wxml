@@ -1,0 +1,35 @@
+<view class='cardDetails'>
+    <view class='card-details-container'>
+        <view class='card-details-item details-name'>{{ pageData.studentName }} </view>
+        <view class='card-details-item details-info'>
+            <text class='card-details-item-title'>{{ pageData.clewTime }}</text>
+            <text class='card-details-item-value'>通过学员家长转发的学员作品集提交课程咨询，请及时跟进。</text> 
+        </view>
+        <view class='card-details-item details-info-text'>
+            <view class='card-details-item-title'>备注孩子信息：</view>
+            <text class='card-details-item-value'>{{ pageData.remark }}</text>
+        </view>
+        <view class='card-details-item details-phone'>
+            <view 
+                class='details-phone-left'>
+                <view class='card-details-item-title'>咨询电话：</view>
+                <text class='card-details-item-value'>{{ pageData.contact }}</text>
+            </view>
+            <icon 
+                class='card-details-item-icon icon-edit'
+                data-phone='{{ pageData.contact }}'
+                data-clewId='{{ pageData.clewId }}'
+                bindtap='callPhone'>
+            </icon>
+        </view>
+        <view class='card-details-item details-followNum'>
+            <view class='card-details-item-title'>跟进次数：</view>
+            <text class='card-details-item-value'>{{ pageData.NumberOfCall }}</text>
+        </view>
+        
+        <view class='card-details-item details-lastFollowTime'>
+            <view class='card-details-item-title'>最后跟进时间：</view>
+            <text class='card-details-item-value'>{{ pageData.lastUpdate }}</text>
+        </view>
+    </view>
+</view>

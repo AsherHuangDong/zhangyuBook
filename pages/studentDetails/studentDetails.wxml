@@ -1,0 +1,59 @@
+<!--pages/studentDetails/studentDetails.wxml-->
+<view class='page'>
+  <view class='head-name'>
+    <image src="{{studentDetails.avatar}}"></image>
+    <text>{{studentDetails.studentName}}</text>
+  </view>
+  
+  <block wx:if="{{studentDetails.collection=='无作品集'}}">
+    <view class='nodata-top'>
+        <!-- 2.1.1、top -->
+        <image class='nodata-top-logo' mode='scaleToFill' src='../../images/nowork.png'>
+        </image>
+        <!-- 2.1.2、info -->
+        <view class='nodata-info'>
+          <view class='nodata-info-title'>
+            该学员还没有作品集
+          </view>
+        </view>
+    </view>
+  </block>
+
+  <block wx:else>
+  <view class='collection-list'>
+    <view class='collection-item' wx:for="{{studentDetails.collection}}" wx:for-index='idx' wx:key="idx" wx:for-item="item" data-samplereelsid='{{ item.collectionId }}' catchtap="gotoDetails">
+      <view class='image-box'>
+        <image src="{{item.gallery}}" mode='aspectFil'></image>
+      </view>
+      <view class='collection-details'>
+        <text class='name'>{{item.collectionName}}</text>
+        <text class='dec'>{{item.collectionDescription}}</text>
+
+         <view class="imgNum">
+                  <image src="../../images/imgNum.png"></image>
+                  <text>{{item.count}}/{{item.photoCount}}</text>
+          </view>
+
+        <view class='operating-conatiner'>
+
+          <view class='iconModel' data-isLike='{{ item.isLiked }}' data-samplereelsid='{{ item.collectionId }}' data-index='{{ idx }}' catchtap='userDianZan'>
+            <icon class='icon-zan {{ item.isLiked ? "active" : "" }}'></icon>
+            <text>{{ item.allLikeCount }}</text>
+          </view>
+
+           <view class='iconModel'>
+                  <icon class='icon-liuyan'></icon>
+                  <text>{{ item.allCommentCount }}</text>
+            </view>
+
+          <view class='iconModel'>
+            <icon class='icon-fenxiang'></icon>
+            <button id='shareBtn' class='shareBtn' plain='true' open-type="share" hover-class='none'>
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>

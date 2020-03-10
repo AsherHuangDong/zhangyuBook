@@ -1,0 +1,48 @@
+<view class='uploadWorkPage'>
+    <!-- 一、上传文件说明： -->
+    <textarea 
+        class='work-text'
+        bindinput='productDesc'
+        placeholder='这一刻的想法……'
+        placeholder-class='placeholder-style'>
+
+    </textarea>
+    <!-- 二、上传图片：最多上传四张限制 -->
+    <view class='imgUpload'>
+        <view class='col-3' catchtap='uploadImgs'>
+            <view class='uploadBtn'>
+                <icon class='icon-xiangji'>
+                </icon>
+            </view>     
+        </view>
+        <view 
+            class='col-3'
+            wx:for='{{ productImg }}'
+            wx:for-index='idx'
+            wx:key='idx'
+            wx:for-item='itemSrc'>
+            <view class='delbtn' data-index="{{idx}}" data-type="image" bindtap='delFile'>X</view>
+            <image 
+                class='uploadImg' 
+                mode='aspectFill' 
+                src='{{ itemSrc }}'
+                data-presrc='{{itemSrc}}'
+                bindtap="previewImg">
+            </image>     
+        </view>
+    </view>
+    <!-- <view class="videoUpload">
+      <view class='uploadVideo' catchtap='uploadVideo'>
+          <image src="../../images/uploadVideo.png"></image>
+      </view>    
+      <block wx:if='{{isshow}}'>
+        <view class="videoList">
+         <view class='delbtn1' data-type="video" bindtap='delFile'>X</view>   
+         <video class="uploadVideo" id="videos" src="{{productVideo}}" bindplay="playVideo"></video>
+        </view>
+      </block> 
+    </view> -->
+    <!-- 三、提交按钮 -->
+    <button class='submit-btn' bindtap="submit">创建</button>
+    
+</view>

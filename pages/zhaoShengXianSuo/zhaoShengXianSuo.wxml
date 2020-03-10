@@ -1,0 +1,87 @@
+<view class='zhaoShengXiaoSuoPage'>
+    <block wx:if='{{ newData.length > 0}}'>
+    <view class='list-container'>
+        <view 
+            class='list-item'
+            wx:for='{{ newData }}'
+            wx:for-index='idx'
+            wx:key='idx'
+            wx:for-item='item'>
+            <view class='list-item-top'>
+                <view class='list-item-top-left'></view>
+                <view class='list-item-top-center list-item-top-time'>
+                   {{item.lastUpdate}}
+                </view>
+                <view class='list-item-top-right list-item-top-info'>
+                    新增家长咨询{{ item.list1?item.list1.length:0 }}条
+                </view>
+            </view>
+            <view class='list-item-bottom'>
+                <view 
+                    class='list-item-card list-item-user'
+                    wx:for='{{ item.list1 }}'
+                    wx:for-index='key'
+                    wx:for-item='student'
+                    wx:key='key'
+                    data-studentId='{{ student.clewId }}'
+                    catchtap='goToStudentDetails'>
+                    <view class='list-item-user-name'>{{ student.studentName }}</view>
+                    <icon 
+                        class='list-item-user-icon icon-gengduo'
+                        wx:if='{{ !student.callRecord }}'></icon>
+                    <view 
+                        class='list-item-user-info'
+                        wx:else>
+                        最后跟进时间：{{ student.lastUpdate  }}
+                    </view>
+                </view>
+                <!-- <view class='list-item-card list-item-user'>
+                    <view class='list-item-user-name'>巧克力</view>
+                    <icon class='list-item-user-icon icon-gengduo'></icon>
+                </view> -->
+            </view>
+        </view>
+
+        <!-- <view class='list-item'>
+            <view class='list-item-top'>
+                <view class='list-item-top-left'></view>
+                <view class='list-item-top-center list-item-top-time'>2019年3月26日</view>
+                <view class='list-item-top-right list-item-top-info'>新增家长咨询2条</view>
+            </view>
+            <view class='list-item-bottom'>
+                <view class='list-item-card list-item-user'>
+                    <view class='list-item-user-name'>莉卡</view>
+                    <icon class='list-item-user-icon icon-gengduo'></icon>
+                </view>
+                <view class='list-item-card list-item-user'>
+                    <view class='list-item-user-name'>巧克力</view>
+                    <icon class='list-item-user-icon icon-gengduo'></icon>
+                </view>
+            </view>
+        </view>
+
+        <view class='list-item'>
+            <view class='list-item-top'>
+                <view class='list-item-top-left'></view>
+                <view class='list-item-top-center list-item-top-time'>2019年3月26日</view>
+                <view class='list-item-top-right list-item-top-info'>新增家长咨询2条</view>
+            </view>
+            <view class='list-item-bottom'>
+                <view class='list-item-card list-item-user'>
+                    <view class='list-item-user-name'>莉卡</view>
+                    <view class='list-item-user-info'>最后跟进时间：2019年03月27日00:14</view>
+                </view>
+                <view class='list-item-card list-item-user'>
+                    <view class='list-item-user-name'>巧克力</view>
+                    <view class='list-item-user-info'>最后跟进时间：2019年03月27日00:14 拷贝</view>
+                </view>
+            </view>
+        </view> -->
+    </view>
+    </block>
+    <block wx:else>
+       <view class="news">
+         <text>平均每7次点评，就能带来1条有效招生信息</text>
+       </view>
+    </block>
+</view>

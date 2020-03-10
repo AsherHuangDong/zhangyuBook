@@ -1,0 +1,222 @@
+<view class='workDetails'>
+    <!-- 一、头部区域 -->
+    <view class='head-top'>
+        <!-- 1.1 -->
+        <view class='head-left'>
+            <text>{{ time }}</text>
+        </view>
+        <!-- 1.2 -->
+        <view class='head-center'></view>
+        <!-- 1.3 -->
+        <view class='head-right'>
+            <!-- <text 
+                class="uploadText active"
+                catchtap="gotoUploadPage">上传作品</text> -->
+        </view>
+    </view>
+    <!-- 二、作品详情区域 -->
+    <view class='details-container'>
+        <view class='card-show'>
+            <!--
+                奇数倍的图片 show1 
+                偶数倍张的图 show2
+            -->
+            <!-- <view 
+                class='product-imgContainer {{ imgList.length%2 ? "show1" : "show2" }}'>
+                <image 
+                    wx:for='{{ imgList }}'
+                    wx:key='idx'
+                    wx:for-item='item'
+                    src='{{item.filePath}}'></image>
+            </view> -->
+            <!-- 后期需求更改 -->
+            <swiper 
+                class='swiper-container'
+                indicator-dots="{{ true && imgList.length > 1}}"
+                indicator-color="rgba(255,255,255)"
+                indicator-active-color="rgb(253,177,2)"
+                easing-function="easeInOutCubic"
+                autoplay="{{ true && imgList.length > 1 }}" 
+                interval="{{3000}}" 
+                duration="{{500}}"
+                circular="true"
+                bindchange='bindchange' 
+                style="height:600rpx;">
+                <block 
+                    wx:for="{{imgList}}"
+                    wx:for-index='idx'
+                    wx:key='idx'
+                    wx:for-item='item'>
+                    <swiper-item class='swiper-item'>
+                        <image 
+                            src="{{item.filePath}}" 
+                            data-presrc="{{item.filePath}}"
+                            class="slide-image"                                                        data-index='{{idx}}'
+                            mode="aspectFill"
+                            style="height:600rpx;"
+                            bindload="imageLoad"
+                            catchtap="previewImg"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+
+            <view class='product-desc'>
+                {{ productDesc }} 
+            </view>
+            <view 
+                class='operating-conatiner'>
+                <view 
+                    class='iconModel'
+                    data-workId='{{ productId }}'
+                    catchtap='userDianZan'>
+                    <icon class='icon-zan {{ isLiked ? "active" : "" }}'></icon>
+                    <text>{{ likeNum }}</text>
+                </view>
+                <view 
+                    class='iconModel'
+                    data-workId='{{ productId }}'
+                    catchtap='userLiuYan'>
+                    <icon class='icon-liuyan'></icon>
+                    <text>{{ commentContentList.length }}</text>
+                </view>
+
+                <view class="iconModel" style="width:20px;position:relative">
+                           <image src="../../images/transmit.png" style="width:16px;height:16px;position:absolute;top:8px" ></image>
+                          <button 
+                              id='shareBtn'
+                              class='shareBtn' 
+                              plain='true' 
+                              open-type="share"
+                              hover-class='none'>
+                          </button>
+                        </view>
+
+                <view class='iconModel'>
+                    <icon class='icon-fenxiang'
+                      data-img='{{imgList[0].filePath}}'
+                      data-id='{{productId}}'
+                      catchtap="shareImg">
+                    </icon>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 三、用户留言区域 -->
+    <view class='leave-comments {{ userGrade != 1 ? "hasZiXun" : "" }}'
+    catchtap="hide">
+        <view 
+            class='leave-commentItem'
+            wx:for='{{ commentContentList }}'
+            wx:for-index="idx"
+            wx:key='idx'
+            wx:for-item='userItem'>
+            <block wx:if='{{ idx < 3  }}'>
+                <!-- <view class='peo-avater'> -->
+                    <image class='peo-avater' src='{{userItem.userHead}}' mode="scaleToFill"></image>
+                <!-- </view> -->
+                <view class='peo-other'>
+                    <view class='peo-name'>{{ userItem.userName }}</view>
+                    <view class='peo-text'>
+                        {{ userItem.comment }}
+                    </view>
+                </view>            
+            </block>           
+            <block wx:if='{{ idx >= 3 && isMoreShow  }}'>
+                <!-- <view class='peo-avater'> -->
+                    <image class='peo-avater' src='{{userItem.userHead}}'></image>
+                <!-- </view> -->
+                <view class='peo-other'>
+                    <view class='peo-name'>{{ userItem.userName }}</view>
+                    <view class='peo-text'>
+                        {{ userItem.comment }}
+                    </view>
+                </view>              
+            </block>
+        </view>
+        <!-- commentContentList .length > 3 -->
+        <view 
+            class='moreLiuYanBtn'
+            wx:if='{{ commentContentList .length > 3 && isMoreBtnShow }}'
+            catchtap="moreLiuYan">
+            <icon class='icon-gengduo'></icon>
+            <text>查看更多</text>
+        </view>
+    </view>
+    <!-- 四、课程咨询btn -->
+    <block wx:if='{{ userGrade != 1 }}'>
+        <view class='advisoryBtnContainer'>
+            <view class='advisoryBtnLeft'>
+                <view 
+                    class='advisory-operating advisoryZan'
+                    data-workId='{{ productId }}'
+                    catchtap='userDianZan'>
+                    <icon class='icon-zan {{ isLiked ? "active" : "" }}'></icon>
+                    <view>赞</view>
+                </view>
+                <view class='advisory-operating advisoryPL' catchtap="userLiuYaned">
+                    <icon class='icon-liuyan'></icon>
+                    <view>评论</view>
+                </view>
+            </view>
+            <view class='advisoryBtnRight' catchtap='showAdvisoryModel'>
+                课程咨询
+            </view>
+        </view>
+    </block>
+    <!-- 五、课堂咨询提交对话框 -->
+    <block wx:if='{{ isShowAdvisoryModel }}'>
+        <view  id='advisoryModel' class='advisoryModel' catchtap='closeAdvisoryModel'>
+            <form 
+                id='advisoryFormModel' 
+                class='advisoryFormModel' 
+                bindsubmit="advisorySubmit">
+                <view class='advisoryModelTitle'>
+                    <text class='advisoryModelBigTitle'>课程咨询</text>
+                    <text class='advisoryModelTitleTip'>（保持电话畅通，老师会12小时内联系您）</text>
+                </view>
+                <view class='submit_input submitName'>
+                    <view class='submit__title'>学员名字</view>
+                    <input 
+                        class='submitInput submitName' 
+                        name="submitName" 
+                        type='text'/>
+                </view>
+                <view class='submit_input submitPhone'>
+                    <view class='submit__title'>家长电话</view>
+                    <input 
+                        class='submitInput submitPhone' 
+                        name="submitPhone" 
+                        type='number'/>
+                </view>
+                <view class='submit_input submitRemarks'>
+                    <view class='submit__title'>备注信息</view>
+                    <input 
+                        class='submitInput submitRemarks' 
+                        name="submitRemarks" 
+                        type='text'/>
+                </view>
+                <button id='submitButton' class='submitButton' form-type="submit">提交</button>
+            </form>
+        </view>
+    </block>
+    <!-- 六、留言对话框 -->
+    <block wx:if='{{ isShowLiuYanModel }}'>
+        <view class='liuyanModel'>
+            <input
+                class='liuyanInput'
+                type='text'
+                placeholder='写评论......'
+                placeholder-class='placeholdercClass'
+                maxlength='100'
+                focus='isShowLiuYanModel'
+                bindinput="liuYan">
+           </input>
+            <button 
+                class='liuYanBtn'
+                size='mini'
+                catchtap="submitLiuYan">
+                发布
+            </button>
+        </view>
+    </block>
+</view>

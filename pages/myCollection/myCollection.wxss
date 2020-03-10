@@ -1,0 +1,514 @@
+/* ------------- 二、内容区域公共部分：时间、和评论、分享留言 ------开始------- */
+.showCollection{
+    margin-bottom: 124rpx;
+    padding: 40rpx 30rpx;
+}
+/* 1.1 时间 */
+.list-showMyCollection .titleTime{
+    position: absolute;
+    top: 15rpx;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #999;
+    left: 40px;
+}
+
+.cardItem .titleTime{
+    position: absolute;
+    top: -30rpx;
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    color: #999;
+}
+
+
+.day{
+    padding: 0 20rpx;
+    padding-right: 10rpx;
+    color: #333;
+    font-size: 40rpx;
+    font-weight: 600;
+}
+.timeRight{
+    color: #666;
+    font-size: 24rpx;
+    text-align: center;
+}
+.mounth{
+    font-size: 32rpx;
+}
+
+.userName{
+  font-size: 32rpx;
+}
+
+/* ------------- 三、列表形式展示区域 --------开始-----*/
+.list-showMyCollection{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.list-showMyCollection .operating-conatiner{
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 10px;
+}
+
+.list-showMyCollection .listItem{
+    position: relative;
+    margin-bottom: 40rpx;
+    padding-top: 50rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1rpx solid #ccc;
+    padding-bottom: 1px;
+}
+
+.list-showMyCollection .listItem .show{
+    padding-left: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.list-showMyCollection .listItem .show .imgContainer{
+    box-sizing: border-box;
+    display: flex;
+    padding: 10rpx;
+    width: 33.3%;
+    align-items: center;
+}
+.list-showMyCollection .listItem .show .imgContainer image{
+   width: 150rpx;
+   height: 150rpx; 
+   border-radius: 20rpx;
+   background: #f5f5f5;
+}
+
+/* ------------- 四、卡片形式展示区域 --------开始-----*/
+.book-showMyCollection{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+}
+.book-showMyCollection .cardItem{
+    position: relative;
+    margin-bottom: 60rpx;
+    padding-top: 50rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.book-showMyCollection .cardItem::before{
+    position: absolute;
+    top: -10rpx;
+    left: -8.5rpx;
+    display: block;
+    content: "";
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    z-index: 10;
+    background: #FC9E3C;
+}
+.book-showMyCollection .cardItem:last-child{
+    margin-bottom: 0;
+}
+
+.book-showMyCollection .show{
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+    padding-left: 20rpx;
+    display: flex;
+}
+.book-showMyCollection .show .imgContainer{
+    box-sizing: border-box; 
+    object-fit: contain;   
+}
+.book-showMyCollection .show .imgContainer image{
+    display: inline-block;
+    width: 100%;
+    height: 100%;  
+}
+.book-showMyCollection .show1{
+    flex: 1;
+}
+.book-showMyCollection .show1 .imgContainer{
+    width: 100%;
+    height: 666rpx;
+}
+.book-showMyCollection .show2{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.book-showMyCollection .show2 .imgContainer{
+    width: 333rpx;
+    height: 333rpx;
+}
+.book-showMyCollection .show2 .imgContainer:nth-child(3),.book-showMyCollection .show2 .imgContainer:nth-child(4){
+    margin-top: 20rpx;
+}
+.book-showMyCollection .show2 .imgContainer:nth-child(2n-1) image{
+    padding-right: 5rpx;
+}
+.book-showMyCollection .show2 .imgContainer:nth-child(2n) image{
+    padding-left: 5rpx;
+}
+.book-showMyCollection .show3{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.book-showMyCollection .show3 .imgContainer:nth-child(1){
+    margin-bottom: 20rpx;
+    width: 100%;
+    height: 400rpx;
+}
+.book-showMyCollection .show3 .imgContainer:nth-child(2){
+    padding-right: 10rpx;
+    width: 40%;
+    height: 334rpx;
+}
+.book-showMyCollection .show3 .imgContainer:nth-child(3){
+    padding-left: 10rpx;
+    width: 60%;
+    height: 334rpx;
+}
+
+/* ------------- 五、页脚 --------页脚提示-----*/
+.footer-bottom{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 11;
+    box-sizing: border-box;
+    padding: 20rpx 40rpx;
+    /* padding-left: 40rpx;
+    padding-right: 20rpx; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    width:100%;
+    opacity:0.5;
+    border-radius: 4px 4px 0 0;
+    background:rgba(0,0,0,1);
+
+}
+.textTop{
+    padding-bottom: 10rpx;
+    font-size: 28rpx;
+}
+.textBottom{
+    padding-top: 10rpx;
+    font-size: 20rpx;
+}
+.point .icon-zan{
+  color: #2F4F4F;
+}
+.point text{
+  font-size: 13px;
+  color: #999;
+}
+.comment text{
+  font-size: 12px;
+  color: #444444;
+}
+.comment .icon-liuyan{
+  color: #666;
+}
+.advisoryBtnContainer {
+  box-sizing: border-box;
+  padding: 20rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.advisoryBtnLeft {
+  display: flex;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.advisoryBtnRight {
+  width: 160rpx;
+  height: 60rpx;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 10px;
+  background: #fc9e3c;
+}
+
+.advisory-operating {
+  padding: 0 40rpx;
+  text-align: center;
+}
+
+.advisory-operating {
+  padding: 0 40rpx;
+  text-align: center;
+}
+
+.liuyanModel {
+  box-sizing: border-box;
+  padding: 40rpx 24rpx;
+  padding-right: 140rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  background: #fff;
+}
+.liuyanInput {
+  box-sizing: border-box;
+  padding: 0 26rpx;
+  display: inline-block;
+  color: #666;
+  font-size: 28rpx;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #eee;
+  border-radius: 60rpx;
+  background: #fff;
+}
+
+.liuYanBtn {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute;
+  right: 20rpx;
+  display: inline-block;
+  width: 120rpx;
+  color: #3f95fa;
+  font-size: 30rpx;
+  line-height: 30px;
+  border: none !important;
+  background: #fff;
+}
+
+.advisoryFormModel {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 12;
+  box-sizing: border-box;
+  padding: 80rpx 48rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #eee;
+}
+
+.advisoryModelTitle, .submit_input {
+  margin-bottom: 56rpx;
+}
+
+.advisoryModelBigTitle {
+  color: #333;
+  font-size: 32rpx;
+}
+
+.advisoryModelTitleTip {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.submit_input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit__title {
+  margin-right: 10rpx;
+  color: #333;
+  font-size: 32rpx;
+  white-space: nowrap;
+}
+
+.submitInput {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  width: 100%;
+  color: #333;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  background: #fff;
+}
+
+.submitButton {
+  width: 100%;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #fc9e3c;
+  border-radius: 60rpx;
+}
+
+.advisoryModel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 11;
+  background: rgba(255, 255, 255, 0);
+}
+
+.cardItem{
+  border-left: 1px solid #333;
+}
+
+.showPhoto{
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.showPhoto .imgContainer{
+  box-sizing: border-box;
+  display: flex;
+  width: 33.3%;
+  align-items: center;
+  padding-bottom: 7px;
+}
+
+.showPhoto image{
+  width:95px;
+  height: 95px;
+  border-radius: 10px;
+}
+
+.omit image{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: -40px;
+  top: -10px;
+}
+
+.delete{
+  position: absolute;
+  height: 30px;
+  width: 65px;
+  top: 20px;
+  right: 0;
+  border: 1px solid #F0F0F0;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.delete1{
+  position: absolute;
+  height: 30px;
+  width: 65px;
+  top: 20px;
+  right: 0;
+  border: 1px solid #ccc;
+  background: #F0F0F0;
+  border-radius: 5px;
+}
+
+.delete image{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.delete1 image{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.comment{
+  width: 80%;
+  padding-left: 35px;
+  padding-bottom: 3px;
+  position: relative;
+  top: 2px;
+}
+
+.comment .user{
+  color: orange;
+  font-weight: 400;
+  padding: 0 3px 0 3px;
+  font-size: 10px;
+  border: 1px solid yellow;
+  margin-right: 3px;
+  border-radius:2px; 
+}
+
+.comment .organization{
+  color: blue;
+  font-weight: 400;
+  padding: 0 3px 0 3px;
+  font-size: 10px;
+  border: 1px solid #0066CC;
+  margin-right: 3px;
+  border-radius:2px;
+}
+.comment .student{
+  color: #008080;
+  font-weight: 400;
+  padding: 0 3px 0 3px;
+  font-size: 10px;
+  border: 1px solid #008080;
+  margin-right: 3px;
+  border-radius:2px;
+}
+.comment .teacher{
+  color: #6A5ACD;
+  font-weight: 400;
+  padding: 0 3px 0 3px;
+  font-size: 10px;
+  border: 1px solid #D8BFD8;
+  margin-right: 3px;
+  border-radius:2px;
+}
+
+.comment .name{
+  font-size: 12px;
+  color: #2F4F4F;
+  padding-right: 3px;
+}
+.comment.content{
+  font-size: 12px
+}
+
+.point{
+  width: 80%;
+  padding-left: 35px;
+  display: flex;
+  position: relative;
+}
+
+.userpoint text{
+  position: relative;
+  top: -7px;
+  color: #2F4F4F;
+  font-size: 12px;
+}
+
+
+
+
+

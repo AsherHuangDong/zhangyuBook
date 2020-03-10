@@ -1,0 +1,101 @@
+<!--pages/my.wxml-->
+<view class='myPage' wx:if="{{isshow}}">
+  <view class='usertop'>
+    <view class='userInfo'>
+      <image class='avater' src='{{ avater }}' mode='aspectFill'></image>
+      <text class='uname'>{{ userName }}</text>
+    </view>
+    <icon class='iconFonts icon-shezhi' bindtap='goToSetting'></icon>
+  </view>
+  <view class='myWorkContainer'>
+    <block wx:if='{{ userGrade == 1 || userGrade == 3}}'>
+    </block>
+    <block wx:if='{{ userGrade == 4 }}'>
+      <view class='myWork' catchtap='gotoZSXS'>
+        <text>招生线索</text>
+        <text class='text-btnBg'>{{ noViewClew }}</text>
+      </view>
+      <view class='myWork' catchtap='gotostudents'>
+        <text>我的学生（{{ studentNumber }}）</text>
+        <icon class='icon-shangchuan'></icon>
+      </view>
+    </block>
+
+    <block wx:if="{{ userGrade == 2 }}">
+      <view class='myWork' catchtap='gotoZSXS'>
+        <text>招生线索</text>
+        <text class='text-btnBg'>{{ noViewClew }}</text>
+      </view>
+      <view class='myWork' catchtap='gotoF'>
+        <text>我的老师（{{ myTeachers }}）</text>
+        <icon class='icon-shangchuan'></icon>
+      </view>
+      <view class='myWork' catchtap='gotoWDXY'>
+        <text>我的学员（{{ myStudents }}）</text>
+        <icon class='icon-shangchuan'></icon>
+      </view>
+    </block>
+
+    <view class='myCollection'>
+      <block wx:if='{{ userGrade == 1|| userGrade == 3 }}'>
+        <view class='myCollectionTitle'>
+          <text>我的绘馆</text>
+          <!-- <icon class='icon-fenxiang'></icon>
+                    <button 
+                    class='shareBtn' 
+                    plain='true' 
+                    open-type="share"
+                    hover-class='none'></button> -->
+        </view>
+      </block>
+      <block wx:else>
+        <view class='myCollectionTitle'>
+          <text>绘馆</text>
+          <!-- <icon class='icon-fenxiang'></icon>
+                    <button 
+                    class='shareBtn' 
+                    plain='true' 
+                    open-type="share"
+                    hover-class='none'></button> -->
+        </view>
+      </block>
+      <view class='myCollectionDetails'>
+        <view class='imgCover' catchtap="gotoDetails">
+          <image class='col-3' wx:for='{{ gallery }}' wx:for-index='idx' wx:key='idx' wx:for-item='item' wx:if='{{ idx < 9 }}' mode='aspectFill' src='{{item}}'>
+          </image>
+        </view>
+        <block wx:if='{{ userGrade == 1 || userGrade == 3}}'>
+          <view class='collectionInfo'>
+            <view>我的作品 {{ userProductNum }} 册</view>
+            <view>累计点赞 {{ like }} 次</view>
+            <view>累计评价 {{ comment }} 次</view>
+            <view>累计访问 {{ view }} 条</view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='collectionInfo'>
+            <view>作品集 {{ collectionNum }} 册</view>
+            <view>家长转发 {{ forward }} 次</view>
+            <view>累计访问 {{ views }} 次</view>
+            <view>获取招生线索 {{ totalClews }} 条</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{!isshow}}" style="margin-top:15px">
+  <view style="display:flex">
+  <text style="font-size:15px;color:#ccc;margin:0 auto">
+     登录之后查看作品集详细信息
+  </text>
+  </view>
+  <view class="noLogin" style="margin-top:5px;display:flex">
+    <image src="../../images/noLogin.svg" style="width:50px;height:50px;margin:0 auto"></image>
+  </view>
+
+  <view style="display:flex;margin-top:5px;">
+    <button style="width:100px;height:35px;font-size:15px;margin:0 auto" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</button>
+  </view>
+</view>

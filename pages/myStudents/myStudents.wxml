@@ -1,0 +1,113 @@
+<view class='myStudentsPage'>
+    <!-- 1、header-top -->
+    <view class="head-top">
+        <!-- 1.1  -->
+        <view class='head-left'>
+            <icon class='icon-quanbu all-student'></icon>
+            <text class="all-student">全部</text>
+        </view>
+        <!-- 1.3 根据用户进行显示-->
+        <view class='head-righ'>
+            <text>邀请学员</text>
+            <button 
+                id='shareBtn'
+                class='shareBtn' 
+                plain='true' 
+                open-type="share"
+                hover-class='none'>
+            </button>
+        </view>
+    </view>
+    <!-- 主要内容 -->
+    <view class='mainContainer'>
+        <block wx:if='{{ students.length < 1 }}'>
+            <view class='no-dataView'>
+                <image src='../../images/noUsers.png'></image>
+                <text class='no-dataTips'>
+                    暂无学员，邀请学员们加入机构吧
+                </text>
+            </view>
+        </block>
+        <block wx:else>
+            <view class='have-dataView'>
+                <view 
+                    class='studentItem'
+                    wx:for='{{ students }}'
+                    wx:for-index='idx'
+                    wx:for-item='studentItem'
+                    wx:key='idx'
+                    data-userId='{{ studentItem.userId }}'
+                    catchtap='backChuangjian'>
+                    <view class='studentInfo'>
+                        <view class='studentInfo-container'>
+                            <image class='studentAvater' src='{{studentItem.avatar}}'></image>
+                            <view class='studentOther'>
+                                <view class='student-top-text'>
+                                    <view>{{ studentItem.myStudents }}</view>
+                                    <icon class='icon-gengduo'></icon>
+                                </view>
+                                <view class='student-bottom-text'>
+                                    <view class='zuopinji'>
+                                        作品集：{{ studentItem.collection }}
+                                    </view>
+                                    <view class='pinglun'>
+                                        评论：{{ studentItem.allCommentCount }}
+                                    </view>
+                                    <view class='zuopinji'>
+                                        赞：{{ studentItem.allLikeCount }}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view 
+                        class='studentRemove'
+                        data-studentId='{{ studentItem.userId }}' 
+                        catchtap='removeStudent'>
+                        <view class='removeContainer'>
+                            <view class='crile'></view>
+                            <view class='remove-text'>
+                                <text class='remove-text-title'>移除学员</text>    
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+                <!-- <view class='studentItem'>
+                    <view class='studentInfo'>
+                        <view class='studentInfo-container'>
+                            <image class='studentAvater' src='../../images/timg.jpg'></image>
+                            <view class='studentOther'>
+                                <view class='student-top-text'>
+                                    <view>利卡</view>
+                                    <icon class='icon-gengduo'></icon>
+                                </view>
+                                <view class='student-bottom-text'>
+                                    <view class='zuopinji'>
+                                        作品集：23
+                                    </view>
+                                    <view class='pinglun'>
+                                        评论：23
+                                    </view>
+                                    <view class='zuopinji'>
+                                        赞：23
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='studentRemove'>
+                        <view class='removeContainer'>
+                            <view class='crile'></view>
+                            <view class='remove-text'>
+                                <text class='remove-text-title'>移除学员</text>    
+                            </view>
+                        </view>
+                    </view>
+                </view> -->
+            </view>
+        </block>
+    </view>
+
+
+</view>

@@ -1,0 +1,99 @@
+/* pages/studentDetails/studentDetails.wxss */
+.head-name{
+  width:100%;
+  padding:40rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32rpx;
+  color:#333333;
+  border-bottom:14rpx solid #FAFAFA;
+}
+
+.head-name image{
+  width:140rpx;
+  height:140rpx;
+  border-radius: 50%;
+}
+.collection-item{
+  display: flex;
+  padding:48rpx 32rpx;
+  border-bottom:1px solid #EEEEEE;
+}
+.image-box{
+  border-radius: 8rpx;
+  width:198rpx;
+  height:262rpx;
+  box-shadow: 1px 1px 1px 1px #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.collection-nothing{
+  display: flex;
+  position: relative;
+  width: 120rpx;
+  height: 100rpx;
+}
+
+.nodata-top {
+  margin-top: 108rpx;
+  text-align: center;
+}
+
+.nodata-top-logo {
+  width: 202rpx;
+  height: 176rpx;
+}
+
+.nodata-info-title {
+  margin-top: 32rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.image-box image{
+  width:126rpx;
+  height:160rpx;
+}
+.collection-details{
+  display: flex;
+  padding-left:18rpx;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  justify-content: space-between;
+}
+.name{
+  color:#333333;
+  font-size: 30rpx;
+  line-height: 62rpx;
+}
+.dec{
+  margin-top:26rpx;
+  line-height: 54rpx;
+  color:#666666;
+  font-size: 24rpx;
+}
+
+
+
+.operating-conatiner .iconModel{
+  padding : 0 40rpx;
+}
+
+.imgNum{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.imgNum image{
+  width: 20px;
+  height: 20px;
+}
+.imgNum text{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 200;
+}

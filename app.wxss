@@ -1,0 +1,119 @@
+@import './fonts/iconfont.wxss';
+
+.active{
+    color: #FDB102;
+}
+/* ------------- 一、头部区域 --------开始----- */
+.head-top{
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    display: flex;
+    justify-content: space-between;
+    color: #999;
+    line-height: 80rpx;
+}
+.head-left,.head-right{
+    width: 200rpx;
+    /* color: #FDB102;     */
+}
+
+.head-center icon {
+    padding: 0 10rpx;
+}
+.head-left{
+    text-align: left;
+}
+.head-right{
+    text-align: right;
+}
+
+/* ------------- 二、点赞、留言、分享 --------开始----- */
+.operating-conatiner{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    position: relative;
+}
+.operating-conatiner .iconModel{
+    padding: 0 20rpx;
+    color: #666;
+    font-size: 24rpx;
+}
+.operating-conatiner .iconModel:last-child{
+    position: relative;
+    padding-right: 0;
+}
+.operating-conatiner .iconModel icon{
+    padding-right: 10rpx;
+}
+.shareBtn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 42rpx;
+    height: 52rpx;
+    border:none !important;
+    background: (255,255,255,0);
+    background-color: none;
+}
+
+/* ------------- 三、等列布局 --------开始----- */
+/* 1、三列布局等宽布局 */ 
+.col-3{
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+    width: 33.3%;
+}
+.col-3:nth-child(3n+1){
+    padding-right: 10rpx;
+    text-align: left;
+}
+.col-3:nth-child(3n-1){
+    padding: 0 10rpx;
+    text-align: center;
+}
+.col-3:nth-child(3n){
+    padding-left: 10rpx;
+    text-align: right;
+}
+.col-3:nth-child(4),.col-3:nth-child(5),.col-3:nth-child(6){
+    margin-bottom: 0;
+}
+
+/* ------------- 四、提交按钮 --------开始----- */
+.submit-btn{
+    /* position: fixed;
+    left: 50%;
+    bottom: 106rpx;
+    transform: translateX(-50%); */
+    width: 600rpx;
+    height: 80rpx;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    background: #FC9E3C;
+}
+
+/* ------------- 五、上传图片按钮 --------开始----- */
+.imgUpload{
+    box-sizing: border-box;
+    padding: 40rpx 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.uploadBtn{
+    display: flex;
+    justify-content: center;
+    line-height: 200rpx;
+    border: 1px solid #eee;
+    border-radius: 4rpx;
+    background: #fafafa;
+}
+.uploadImg{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-height: 200rpx;
+}

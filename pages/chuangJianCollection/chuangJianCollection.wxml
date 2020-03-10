@@ -1,0 +1,50 @@
+<view class='chuangJianCollection'>
+  <!-- 一、作品集说明 -->
+  <view class='collection-description'>
+    <view class='title collection-description-title'>作品集说明</view>
+    <textarea class='collection-description-text' bindinput='collectionDesc'
+    placeholder="想说说什么...(50字以内)"
+    placeholder-style="collection-description-input-placeholder-style"
+    maxlength="50">
+    </textarea>
+  </view>
+  <!-- 二、封面上传 -->
+  <view class='imgUpload upload-Container'>
+    <view class='col-3'>
+      <view class='uploadBtn' bindtap='uploadImg'>
+        <icon class='icon-xiangji'></icon>
+        <text class='uploadBtn-name'>封面</text>
+      </view>
+    </view>
+    <view class='col-3'>
+      <image class='uploadImg' mode='aspectFill' src='{{ uploadImgFile }}'>
+      </image>
+    </view>
+  </view>
+  <!-- 三、作品集名称 -->
+  <view class='collection-name'>
+    <view class='title collection-description-title'>作品集名称</view>
+    <input class='collection-description-name' bindinput='collectionName' placeholder="示例：6岁那年(10字以内)" placeholder-style='collection-description-input-placeholder-style' maxlength="10"></input>
+  </view>
+  <!-- 四、学院姓名：功能跳转到我得学院，选择轩辕返回 -->
+  <view class='collection-student' wx:if='{{ userGrade == 2 || userGrade == 4 }}'>
+    <view class='title collection-description-title'>学员姓名</view>
+    <view class='selectBox'>
+      <view class='collection-description-name' bindtap='isSelect'>{{name}}</view>
+      <view style='select' wx:if='{{isselect}}'>
+        <view class='selectItem' bindtap='getSelect'>请选择...</view>
+        <view wx:for='{{listStudent}}' class='selectItem' data-name='{{item.myStudents}}' data-id='{{item.userId}}' bindtap='getSelect'>{{item.myStudents}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 五、是否公开 -->
+  <view class='collection-isPublic'>
+    <view class='title collection-isPublic-title'>
+      是否公开
+      <text>（可参加全国排名）</text>
+    </view>
+    <switch class='collection-isPublic-switch-btn' color='#FC9E3C' bindchange="switch1Change" />
+  </view>
+  <!-- 五、提交按钮 -->
+  <button class='submit-btn submit-switch-btn' catchtap='submitAll'>创建</button>
+</view>

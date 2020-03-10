@@ -1,0 +1,318 @@
+/* ------------- 一、头部区域: 补充 --------开始----- */
+
+.head-left {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: auto;
+}
+
+.head-left::before {
+  margin-right: 10rpx;
+  display: block;
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  z-index: 10;
+  background: #fc9e3c;
+}
+
+/* ------------- 二、作品详情区域 --------开始----- */
+
+.details-container {
+  padding: 0 20rpx;
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.product-imgContainer {
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.product-imgContainer image {
+  box-sizing: border-box;
+}
+
+.show1 image:nth-child(1) {
+  width: 100%;
+  border-radius: 4rpx;
+}
+
+.show1 image:nth-child(2), .show1 image:nth-child(3) {
+  margin-top: 20rpx;
+  width: 50%;
+}
+
+.show1 image:nth-child(2) {
+  padding-right: 10rpx;
+}
+
+.show1 image:nth-child(3) {
+  padding-left: 10rpx;
+}
+
+.show2 image {
+  width: 50%;
+  border-radius: 4rpx;
+}
+
+.show2 image:nth-child(2n-1) {
+  padding-right: 10rpx;
+}
+
+.show2 image:nth-child(2n) {
+  padding-left: 10rpx;
+}
+
+.show2 image:nth-child(3), .show2 image:nth-child(4) {
+  margin-top: 20rpx;
+}
+
+/* 需求更改——改成了banner图 */
+
+.swiper-container {
+  font-size: 0;
+  background: #eee;
+}
+
+.slide-image {
+  /* display: block; */
+  width: 100%;
+  height: 500rpx;
+}
+
+.product-desc {
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  padding-left: 20rpx;
+  color: #666;
+  font-size: 27rpx;
+}
+
+/* ------------- 三、用户留言区域 --------开始----- */
+
+.leave-comments {
+  box-sizing: border-box;
+  padding: 38rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.hasZiXun {
+  margin-bottom: 58px;
+}
+
+.leave-commentItem {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.leave-commentItem:last-child .peo-other {
+  border: none;
+}
+
+.leave-commentItem:last-child {
+  margin-bottom: 0;
+}
+
+.peo-avater {
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  display: block;
+  width: 105rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background: #f5f5f5;
+}
+
+.peo-other {
+  box-sizing: border-box;
+  margin-bottom: 38rpx;
+  padding-bottom: 20rpx;
+  width: 100%;
+  color: #666;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.peo-name {
+  padding: 10rpx 0;
+  font-size: 28rpx;
+}
+
+.peo-text {
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+}
+
+.moreLiuYanBtn {
+  color: #999;
+  font-size: 16px;
+  text-align: center;
+}
+
+/*  */
+
+.advisoryBtnContainer {
+  box-sizing: border-box;
+  padding: 20rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.advisoryBtnLeft {
+  display: flex;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.advisory-operating {
+  padding: 0 40rpx;
+  text-align: center;
+}
+
+.advisoryBtnRight {
+  width: 160rpx;
+  height: 60rpx;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 10px;
+  background: #fc9e3c;
+}
+
+.advisoryModel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 11;
+  background: rgba(255, 255, 255, 0);
+}
+
+.advisoryFormModel {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 12;
+  box-sizing: border-box;
+  padding: 80rpx 48rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #eee;
+}
+
+.advisoryModelTitle, .submit_input {
+  margin-bottom: 56rpx;
+}
+
+.advisoryModelBigTitle {
+  color: #333;
+  font-size: 32rpx;
+}
+
+.advisoryModelTitleTip {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.submit_input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit__title {
+  margin-right: 10rpx;
+  color: #333;
+  font-size: 32rpx;
+  white-space: nowrap;
+}
+
+.submitInput {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  width: 100%;
+  color: #333;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  background: #fff;
+}
+
+.submitButton {
+  width: 100%;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #fc9e3c;
+  border-radius: 60rpx;
+}
+
+/*----------------- 留言 -----------------------------*/
+
+.liuyanModel {
+  box-sizing: border-box;
+  padding: 40rpx 24rpx;
+  padding-right: 140rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  background: #fff;
+}
+
+.liuyanInput {
+  box-sizing: border-box;
+  padding: 0 26rpx;
+  display: inline-block;
+  color: #666;
+  font-size: 28rpx;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #eee;
+  border-radius: 60rpx;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.placeholdercClass {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.liuYanBtn {
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute;
+  right: 20rpx;
+  display: inline-block;
+  width: 120rpx;
+  color: #3f95fa;
+  font-size: 30rpx !important;
+  line-height: 30px;
+  border: none !important;
+  background: #fff;
+}
+
+.liuYanBtn:after {
+  border: none;
+}

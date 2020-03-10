@@ -1,0 +1,4 @@
+/**index.wxss**/
+.usertop{
+    border-bottom: 20rpx solid #000;
+}

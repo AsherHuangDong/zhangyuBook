@@ -1,0 +1,81 @@
+<view class='userSetting'>
+    <view class='usertop'>
+        <view class='userInfo'>
+            <!-- <view class='avater'> -->
+                <!-- ../../ima1ges/avater.png -->
+                <image 
+                    class='avater'
+                    src='{{ avater }}'
+                    mode='aspectFill'
+                    catchtap="replaceAvater"></image>
+            <!-- </view> -->
+            <text class='uname' catchtap="replaceUserName" wx:show='{{userGrade==2}}'>{{ userName }}</text>
+        </view>
+        <icon 
+            class="icon-edit" 
+            catchtap="replaceUserName"
+            wx:if='{{ userGrade == 2 }}'></icon>
+    </view>
+    <view class='myWorkContainer'>
+        <!-- <view class='myWork'>
+            <text>手机号码: </text>
+            <text>{{phone}}</text>
+        </view>   -->
+        <block wx-if='{{ userGrade == 1 || userGrade == 3}}'>
+            <view wx-if='{{ organizationStatus == 0}}' class='myWork' bindtap='goToUpgrade'>
+                <text>升级为培训机构</text>
+                <text>升级</text>
+            </view> 
+            <view wx-if="{{ organizationStatus == 1 }}" class='myWork'>
+                <text>升级为培训机构</text>
+                <text>审核中</text>
+            </view> 
+            <view class='myWork shareViewContainer'>
+                <text>邀请朋友</text>
+                <icon class='icon-yaoqing'>
+                <button 
+                    class='shareBtn' 
+                    plain='true' 
+                    open-type="share"
+                    hover-class='none'></button></icon>
+            </view> 
+            <!-- 暂时性去掉
+            <view class='myWork'>
+                <text>帮助与建议反馈</text>
+                <icon class="icon-fankuijianyi"></icon>
+            </view>  -->        
+        </block>
+        <block wx:else>
+            <view class='myWork'>
+                <text>添加管理员</text>
+                <icon class='icon-yaoqing'>
+                <button
+                  class='shareBtn' 
+                    plain='true' 
+                    open-type="share"
+                    hover-class='none'>
+                  </button>
+                </icon>
+            </view>         
+        </block>
+    </view>
+
+    <view wx:if='{{ showReplace }}'>
+        <view class='mask_layer' bindtap='modal_click_Hidden' />
+        <view class='modal_box'>
+            <view class="modal_title">修改机构名称</view>
+            <view class='content'>
+                <textarea 
+                    class='input_show1' 
+                    bindinput='changeCancelReason' 
+                    auto-height 
+                    maxlength="10"
+                    value='{{replacedUserName}}'></textarea>
+            </view>
+            <view class='btn1'>
+                <view bindtap='modal_click_Hidden' class='cancel'>取消</view>
+                <view bindtap='submitReplacedUserName' class='Sure'>确定</view>
+            </view>
+        </view>
+    </view>
+</view>

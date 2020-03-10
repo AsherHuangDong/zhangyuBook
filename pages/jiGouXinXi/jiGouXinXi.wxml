@@ -1,0 +1,51 @@
+<view class='jiGouXinXiPage'>
+    <!-- 一、头像上传 -->
+    <view class='usertop'>
+        <view class='userInfo'>
+            <image class='avater' src='{{ avater }}' mode='aspectFill'></image>
+            <text class='uname' bindtap='uploadAvater'>点击上传</text>
+        </view>
+    </view>
+    <!-- 二、表单部分 -->
+    <view class='myWorkContainer'>
+        <view class='myWork-input'>
+            <text>机构名称：</text>
+            <input 
+                type='text' 
+                maxlength='20' 
+                value='{{ name }}'
+                bindinput='nameOk'></input>
+        </view>  
+        <view class='myWork-input'>
+            <text>联系人：</text>
+            <input 
+                type='text' 
+                maxlength='20'
+                value='{{ userName }}'
+                bindinput='userNameOk'></input>
+        </view> 
+        <view class='myWork-input'>
+            <text>联系电话：</text>
+            <input 
+                type='number' 
+                maxlength='11'
+                value='{{ userPhone }}'
+                bindinput='userPhoneOk'></input>
+        </view> 
+        <view class='myWork-textarea'>
+            <text>机构简介：</text>
+            <textarea 
+                class='myWork-textarea-style'
+                maxlength='100'
+                value='{{ desc }}'
+                bindinput='descOk'>
+            </textarea>
+        </view> 
+    </view>
+    <!-- 三、buutton -->
+    <button 
+        class='submit-btn jiGouXinXiPage-submit-btn' 
+        bindtap='submitForm'>
+        确定
+    </button>
+</view>

@@ -1,0 +1,107 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.3",
+	"appid": "wxbb3cd9bfcc342034",
+	"projectname": "zhangYuBook",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "shareId=50&&status=2",
+					"scene": 1036,
+					"referrerInfo": {
+						"appId": "wxbb3cd9bfcc342034"
+					}
+				},
+				{
+					"id": 1,
+					"name": "pages/myCollection/myCollection",
+					"pathName": "pages/myCollection/myCollection",
+					"query": "userId=30&&shopId=258",
+					"scene": 1036,
+					"referrerInfo": {
+						"appId": "wxbb3cd9bfcc342034"
+					}
+				},
+				{
+					"id": 2,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1036,
+					"referrerInfo": {
+						"appId": "wxbb3cd9bfcc342034"
+					}
+				},
+				{
+					"id": 3,
+					"name": "pages/workDetails/workDetails",
+					"pathName": "pages/workDetails/workDetails",
+					"query": "userId=28&&productId=356",
+					"scene": 1047
+				},
+				{
+					"id": 4,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "userId=28",
+					"scene": 1036,
+					"referrerInfo": {
+						"appId": "wxbb3cd9bfcc342034"
+					}
+				}
+			]
+		}
+	}
+}

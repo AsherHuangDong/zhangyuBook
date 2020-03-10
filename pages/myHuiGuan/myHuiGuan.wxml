@@ -1,0 +1,71 @@
+<!-- 主页面开始 -->
+<view class='myHuiGuanPage'>
+  <!-- 无数据 -->
+  <block wx:if='{{ !listData }}'>
+    <view class='nodate-conatiner'>
+      <!-- <icon class='nodata-icon icon-meiyouzuopinhuise'></icon> -->
+      <image class='nodata-logo' src='../../images/nowork.png'></image>
+      <view class='nodata-info-title'>还没有作品集</view>
+      <view class='nodata-info-titleText'>创建作品集，收集珍藏孩子的作品</view>
+    </view>
+    <!-- 二、提交按钮 -->
+    <button class='submit-btn nodata-submit-btn' bindtap="gotoNewCollectionPage">
+      创建作品集
+    </button>
+  </block>
+  <!-- 有数据 -->
+  <block wx:if='{{ listData.length > 0 }}'>
+    <!-- 一、列表区域 -->
+    <view class='list-conatiner'>
+      <view class='list-item' wx:for='{{ listData }}' wx:for-index="idx" wx:key='idx' wx:for-item='listItem' data-shopId='{{ listItem.sampleReelsId }}' catchtap='gotoDetailsPage'>
+        <!-- 1.1、左侧：图片 -->
+        <!-- <view class='listItem-img'> -->
+        <!-- ../../images/timg.jpg -->
+        <image mode='aspectFill' class='listItem-img' src='{{ listItem.sampleReelsCover }}'>
+        </image>
+        <!-- </view> -->
+        <!-- 1.2、右侧：信息 -->
+        <view class='listItem-info'>
+          <view class='listItem-about'>
+            <view class='listItem-top'>
+              <text class='listItemInfo-top-title'>{{ listItem.sampleReelsName }}</text>
+              <icon id='editIcon' class='listItemInfo-top-icon icon-edit' data-shopId='{{ listItem.sampleReelsId }}' bindtap='gotoXiuGai'></icon>
+            </view>
+            <text class='listItem-Info-Desc'>
+                        <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet ldsada dadjdhuw dasjkdas dakdkadsa duaydda hdakd -->
+                            {{ listItem.sampleReelsDescription }}
+                        </text>
+          </view>
+          <view class="imgNum">
+            <image src="../../images/imgNum.png"></image>
+            <text>{{listItem.count}}/{{listItem.photoCount}}</text>
+          </view>
+          <view class='operating-conatiner'>
+            <view class='iconModel' data-isLike='{{ listItem.isLiked }}' data-workId='{{ listItem.sampleReelsId }}' data-index='{{ idx }}' catchtap='userDianZan'>
+              <icon class='icon-zan'></icon>
+              <text>{{ listItem.allLikeCount }}</text>
+            </view>
+            <view class='iconModel'>
+              <icon class='icon-liuyan'></icon>
+              <text>{{ listItem.allCommentCount }}</text>
+            </view>
+            <view class="iconModel" style="width:20px;position:relative">
+              <image src="../../images/transmit.png" style="width:16px;height:16px;position:absolute;top:8px"></image>
+              <button id='shareBtn' class='shareBtn' plain='true' open-type="share" hover-class='none' data-img='{{listItem.sampleReelsCover}}'>
+              </button>
+            </view>
+            <view class='iconModel'>
+              <icon class='icon-fenxiang' data-img='{{listItem.sampleReelsCover}}' data-id='{{listItem.sampleReelsId}}' data-name='{{listItem.sampleReelsName}}' data-pcount='{{listItem.photoCount}}' data-desc='{{listItem.sampleReelsDescription}}' data-count='{{listItem.count}}'
+                catchtap='shareImg'></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <!-- 二、提交按钮 -->
+    <button class='submit-btn hasdata-submit-btn' catchtap="gotoNewCollectionPage">
+      创建作品集
+    </button>
+  </block>
+</view>

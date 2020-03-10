@@ -1,0 +1,86 @@
+.chuangJianCollection{
+    padding: 40rpx 32rpx;
+    border-top: 2px solid #eee;
+}
+.title{
+    margin-bottom: 20rpx;
+    color: #333;
+    font-size: 32rpx;
+    text-align: left;
+}
+
+.collection-description-text{
+    box-sizing: border-box;
+    padding: 20rpx;
+    width: 100%;
+    height: 154rpx;
+    border: 1px solid #eee;
+    border-radius: 4rpx;
+    background: #FAFAFA;
+}
+.selectBox{
+  width:100%;
+  height:154rpx;
+  position: relative;
+}
+.select{
+  width:100%;
+  position: absolute;
+  bottom:-70rpx;
+  left:0;
+}
+.selectItem{
+  height:70rpx;
+  line-height: 70rpx;
+  padding-left:20rpx;
+  border: 1px solid #eee;
+  background: #FAFAFA;
+}
+.submit-switch-btn{
+    position: fixed;
+    left: 50%;
+    bottom: 40rpx;
+    transform: translateX(-50%);
+}
+
+.uploadBtn{
+    flex-direction: column; 
+    height: 200rpx;
+    line-height: 38rpx;
+    align-items: center;
+}
+.uploadBtn-name{  
+    color: #A0AAB7;
+    font-size: 24rpx;
+}
+.collection-student{
+    margin-top: 20rpx;
+}
+.collection-description-name{
+    box-sizing: border-box;
+    padding: 20rpx;
+    width: 100%;
+    height: 80rpx;
+    border: 1px solid #eee;
+    border-radius: 4rpx;
+    background: #FAFAFA;
+}
+.collection-description-input-placeholder-style{
+    color: #A0AAB7;
+    font-size: 24rpx;
+}
+
+.collection-isPublic{
+    box-sizing: border-box;
+    margin: 40rpx 0;
+    display: flex;
+    justify-content: space-between;
+}
+.collection-isPublic-title{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.collection-isPublic-switch-btn{
+    transform: scale(.6);
+}

@@ -1,0 +1,19 @@
+.page-top{
+    margin: 100rpx auto;
+    display: block;
+    width: 184rpx;
+    height: 184rpx;
+}
+.page-info{
+    margin-bottom: 156rpx;
+    text-align: center;
+}
+.info-title{
+    margin-bottom: 40rpx;
+    color: #333;
+    font-size: 32rpx;
+}
+.info-text{
+    color: #A0AAB7;
+    font-size: 28rpx;
+}

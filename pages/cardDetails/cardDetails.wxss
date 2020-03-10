@@ -1,0 +1,48 @@
+.cardDetails{
+    padding: 30rpx;
+    min-height: 95vh;
+    background: #fafafa;
+}
+.card-details-container{
+    padding: 0 30rpx;
+    border-radius: 4rpx;
+    background: #fff;
+}
+.card-details-item{
+    padding: 20rpx 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+.card-details-item-title{
+    color: #333;
+    font-size: 32rpx;
+}
+.card-details-item-value{
+    color: #666;
+    font-size: 30rpx;
+}
+.card-details-item-icon{
+    box-sizing: border-box;
+    padding: 8rpx;
+    display: flex;
+    color: #fff;
+    border-radius: 50%;
+    background: #FC9E3C;
+}
+.details-name{
+    color: #333;
+    font-size: 32rpx;
+}
+.details-info{
+    display: block;
+}
+.details-info .card-details-item-title{
+    margin-right: 20rpx;
+}
+.details-phone{
+    justify-content: space-between;
+}
+.details-phone-left{
+    display: flex;
+}

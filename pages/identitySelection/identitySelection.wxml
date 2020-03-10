@@ -1,0 +1,54 @@
+<view class="identity">
+
+  <view class="head">
+    <text>欢迎来到章鱼书</text>
+  </view>
+
+  <view class="body">
+    <view>
+      <text>请您选择对应的角色</text>
+    </view>
+    <view>
+      <text>开启您的温暖之旅!!!</text>
+    </view>
+  </view>
+
+  <view class="imglist">
+    <view class="img1">
+      <image src="../../images/organization.svg"></image>
+      <button class="organization" bindtap="gotoOrganization" data-status='{{userGrade}}' data-id='{{userId}}'>机构/老师</button>
+    </view>
+
+    <view class="img2">
+      <image src="../../images/parent.svg"></image>
+      <button class="student" bindtap="gotoStudent">家长/学员</button>
+    </view>
+
+    <view class="img3">
+      <image src="../../images/user.svg"></image>
+      <button class="user" bindtap="gotoUser">普通用户</button>
+    </view>
+  </view>
+
+  <view class="img4">
+      <image src="../../images/travel.svg"></image>
+      <button class="nologin" bindtap="gotoTourist">游客体验</button>
+    </view>
+</view>
+
+<view wx:if="{{isShow}}" style="position:fixed;width:100%;height:100%;left:0;top:0;background: rgba(0,0,0,0.5)">
+  <view style="width:60%;height:40%;margin-top:60%;">
+    <view style="height:20px;background:#fff;">
+      <image src="../../images/delete.png" style="height:15px;width:15px;float:right" catchtap="cancel"></image>
+    </view>
+    <view style="height:60px;background:#fff;">
+      <image src="../../images/books.png" style="height:50px;width:50px;padding-left:85px"></image>
+    </view>
+    <view style="height:35px;background:#fff;text-align:center;">
+      <text style="font-size:14px;color:#A8A8A8">一键授权，查看更多精彩内容~</text>
+    </view>
+    <view style="background:#fff">
+      <button style="height:30px;font-size:14px;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button>
+    </view>
+  </view>
+</view>

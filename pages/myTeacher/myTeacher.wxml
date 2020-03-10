@@ -1,0 +1,75 @@
+<view class='myStudentsPage'>
+    <!-- 1、header-top -->
+    <view class="head-top">
+        <!-- 1.1  -->
+        <view class='head-left'>
+            <icon class='icon-quanbu all-student'></icon>
+            <text class="all-student">全部</text>
+        </view>
+        <!-- 1.3 根据用户进行显示-->
+        <view class='head-righ'>
+            <text>邀请老师</text>
+            <button 
+                id='shareBtn'
+                class='shareBtn' 
+                plain='true' 
+                open-type="share"
+                hover-class='none'>
+            </button>
+        </view>
+    </view>
+    <!-- 主要内容 -->
+    <view class='mainContainer'>
+        <block wx:if='{{ teachers.length < 1 }}'>
+            <view class='no-dataView'>
+                <image src='../../images/noUsers.png'></image>
+                <text class='no-dataTips'>
+                    暂无老师，邀请老师们加入机构吧
+                </text>
+            </view>
+        </block>
+        <block wx:else>
+            <view class='have-dataView'>
+                <view 
+                    class='studentItem'
+                    wx:for='{{ teachers }}'
+                    wx:for-index='idx'
+                    wx:for-item='teachersItem'
+                    wx:key='idx'
+                    data-userId='{{ teachersItem.userId }}'
+                    catchtap='backChuangjian'>
+                    <view class='studentInfo'>
+                        <view class='studentInfo-container'>
+                            <image class='studentAvater' src='{{teachersItem.avatar}}'></image>
+                            <view class='studentOther'>
+                                <view class='student-top-text'>
+                                    <view>{{ teachersItem.myStudents }}</view>
+                                    <!-- <icon class='icon-gengduo'></icon> -->
+                                </view>
+                                <view class='student-bottom-text'>
+                                    <view class='zuopinji'>
+                                        学生总数：{{ teachersItem.studentCount }}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view 
+                        class='studentRemove'
+                        data-studentId='{{ teachersItem.userId }}' 
+                        catchtap='removeStudent'>
+                        <view class='removeContainer'>
+                            <view class='crile'></view>
+                            <view class='remove-text'>
+                                <text class='remove-text-title'>移除老师</text>   
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+        </block>
+    </view>
+
+
+</view>

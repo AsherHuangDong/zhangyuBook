@@ -1,0 +1,22 @@
+<!--pages/loading/loading.wxml-->
+<view class='loadingPage' wx:show='{{isShow}}'>
+    <!-- 一、wechatLogo -->
+    <image class='page-top' src='../../images/wechat.png'></image>
+    <!-- 二、info -->
+    <view class='page-info'>
+        <view class='info-title'>
+            申请获取以下权限
+        </view>
+        <view class='info-text'>
+            获得你的公开信息昵称、头像等
+        </view>
+    </view>
+    <!-- 三、button -->
+    <button 
+        class='submit-btn'
+        wx:if="{{ !hasUserInfo && canIUse}}" 
+        open-type="getUserInfo" 
+        bindgetuserinfo="getUserInfo">
+        授权登录
+    </button>
+</view>

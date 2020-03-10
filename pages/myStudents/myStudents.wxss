@@ -1,0 +1,137 @@
+/* pages/myStudents/myStudents.wxss */
+.icon-quanbu{
+    margin-right: 8rpx;
+}
+.head-top{
+    border-bottom: 1px solid #eee;
+}
+.head-righ{
+    position: relative;
+}
+.shareBtn{
+    width: 100%;
+    height: 100%;
+}
+
+.no-dataView{
+    margin-top: 140rpx;
+    color: #B4BFCA;
+    font-size: 28rpx;
+    text-align: center;    
+}
+
+.no-dataView image{
+    margin-bottom: 20rpx;
+    width: 148rpx;
+    height: 104rpx;
+
+}
+
+.have-dataView{
+    min-height: 86vh;
+    padding: 40rpx 30rpx;
+    background: #fafafa;
+}
+.studentItem{
+    box-sizing: border-box;
+    position: relative;
+    /* height: 160rpx;  */
+    margin-bottom:40rpx;
+    font-size: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    border-radius: 8rpx;
+    background: #fff;
+}
+.studentInfo{
+    width: 100%;
+    height: 160rpx;
+    display: inline-block;
+    /* display: flex;
+    justify-content: space-between */
+}
+.studentInfo-container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.studentAvater{
+    position: absolute;
+    top: 10rpx;
+    left: 10rpx;
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+}
+.studentOther{
+    box-sizing: border-box;
+    padding: 10rpx 20rpx 10rpx 10rpx;
+    padding-left: 150rpx;
+    display: flex;
+    width: 100%;
+    height: 160rpx;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.student-top-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.student-top-text view{
+    color: #333;
+    font-size: 32rpx;
+}
+.student-top-text icon{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 40rpx;
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    border-radius: 50%;
+    background: #FC9E3C;
+}
+.student-bottom-text{
+    color: #666;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.studentRemove{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: inline-block;
+    height: 160rpx;
+    white-space: nowrap;
+}
+.removeContainer{
+    position: relative;
+    height: 160rpx;
+    display: flex;
+    flex-direction: row;
+}
+.crile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    background: #FC9E3C;
+}
+.remove-text{
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 80rpx;
+    padding-right: 20rpx;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 160rpx;
+    background: #FC9E3C;
+}

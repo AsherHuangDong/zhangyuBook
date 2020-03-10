@@ -1,0 +1,38 @@
+<template name='list-item-model'>
+    <view class='list-item'>
+        <!-- 一、左侧：图片 -->
+        <view class='listItem-img'>
+            <image src='../../images/timg.jpg'></image>
+        </view>
+        <!-- 二、右侧：信息 -->
+        <view class='listItem-info'>
+            <view class='listItem-about'>
+                <view class='listItem-top'>
+                    <text class='listItemInfo-top-title'>巧克力的作品集</text>
+                    <!-- 
+                        1、"pages/index/index": 传入image-avater
+                        <image class='listItemInfo-top-avater' src='../../images/timg.jpg'></image> 
+                        2、"pages/myHuiGuan/myHuiGuan"：传入icon
+                        <icon class='listItemInfo-top-icon icon-edit'></icon>
+                    -->
+                    <slot name='listItemInfo-top-right'></slot>
+                </view>
+                <text class='listItem-Info-Desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet ldsada dadjdhuw dasjkdas dakdkadsa duaydda hdakd
+                </text>
+            </view>
+            <view class='operating-conatiner'>
+                <view class='iconModel'>
+                    <icon class='icon-zan active'></icon>
+                    <text>908</text>
+                </view>
+                <view class='iconModel'>
+                    <icon class='icon-liuyan'></icon>
+                    <text>908</text>
+                </view>
+                <view class='iconModel'>
+                    <icon class='icon-fenxiang'></icon>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

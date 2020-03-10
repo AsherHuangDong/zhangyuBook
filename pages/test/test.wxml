@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+    <icon class="icon-liebiao"></icon>
+    <icon class="icon-fenxiang"></icon>
+    <icon class="icon-shangchuan"></icon>
+    <icon class="icon-zan"></icon>
+    <icon class="icon-fenxiang"></icon>
+    <icon class="icon-liuyan"></icon>
+    <icon class="icon-shezhi"></icon>
+    <icon class="icon-quanbu"></icon>
+    <icon class="icon-jiugongge"></icon>
+
+    <icon class="icon-liuyan"></icon>
+    <icon class="icon-quanbu"></icon>
+    <icon class="icon-jiugongge"></icon>
+    <icon class="icon-gengduo"></icon>
+    <icon class="icon-edit"></icon>
+    <icon class="icon-fankuijianyi"></icon>
+    <icon class="icon-icon-test"></icon>
+    <icon class="icon-liebiao"></icon>
+    <icon class="icon-xiangji"></icon>
+    <icon class="icon-yaoqing"></icon>
+    <icon class="icon-liebiao1"></icon>
+    <icon class="icon-meiyouzuopinhuise"></icon>
+
+    <icon class='icon-gengduoxiajiantou'></icon>
+
+    <view hidden="{{condition}}"> 11111 </view>
+    <view hidden="{{!condition}}"> 22222 </view>
+
+</view>

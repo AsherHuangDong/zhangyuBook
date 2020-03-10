@@ -1,0 +1,272 @@
+.head-top {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.head-left icon {
+  margin-right: 12rpx;
+}
+
+/* ---------------------- card展示 开始------------------------------------- */
+
+.cardShowContainer {
+  padding: 40rpx 20rpx;
+  padding-bottom: 0;
+  min-height: 90vh;
+  /* background: #F6F6F6; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.cardShowContainer .cardContainer {
+  box-sizing: border-box;
+  padding: 0 10px;
+  width: 33.3%;
+}
+
+.cardShowContainer .card {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.cardShowContainer .card .cardAbout {
+  position: relative;
+  padding: 26px 12px;
+  border-radius: 4rpx;
+  box-shadow: 1px 1px 1px 1px #ddd;
+  background: #fff;
+}
+
+.cardShowContainer .card .cardAbout .itemStart {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  width: 15px;
+  height: 18px;
+}
+
+.cardShowContainer .card .cardAbout .itemImg {
+  margin: 0 auto;
+  width: 120rpx;
+  height: 160rpx;
+  object-fit: cover;
+  border: 1px solid #e5e5e5;
+}
+
+.cardShowContainer .card .cardAbout .itemImg image {
+  width: 120rpx;
+  height: 160rpx;
+}
+
+.cardShowContainer .card .cardAbout .itemInfo {
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  border-radius: 0 0 4rpx 4rpx;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cardShowContainer .card .cardAbout .itemInfo .itemZan,
+.cardShowContainer .card .cardAbout .itemInfo .itemPingLun {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.cardShowContainer .card .cardAbout .itemInfo icon {
+  padding-right: 10rpx;
+  display: flex;
+  font-size: 24rpx;
+  align-items: center;
+}
+
+.cardShowContainer .card .cardTtitle {
+  margin-top: 8rpx;
+  display: block;
+  color: #666;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------------------- card展示 结束------------------------------------- */
+
+/* ---------------------- list展示 开始------------------------------------- */
+
+.listShowContainer {
+  padding: 40rpx 20rpx;
+  padding-bottom: 0;
+  min-height: 90vh;
+  /* background: #F6F6F6;     */
+}
+
+.listShowContainer .listItem {
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+  padding-bottom: 40rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+}
+
+.listShowContainer .listItem:last-child {
+  margin-bottom: 0;
+  border: none;
+}
+
+.img-box {
+   position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8rpx;
+  width: 198rpx;
+  height: 262rpx;
+  box-shadow: 1px 1px 1px 1px #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-box .listItem-img {
+  width: 126rpx;
+  height: 160rpx;
+}
+
+/* .listShowContainer .listItem .listItem-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 200rpx;
+  height: 260rpx;
+  border: 1px solid #eee;
+  border-radius: 8rpx;
+} */
+
+.listShowContainer .listItem .listItemInfo {
+  box-sizing: border-box;
+  padding-left: 220rpx;
+  display: flex;
+  width: 100%;
+  height: 260rpx;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.listShowContainer .listItem .listItemInfo .listItemAbout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.listShowContainer .listItem .listItemInfo .listItemAbout .listItemInfoTitle {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.listItemInfoTitleText {
+  width: 100%;
+  color: #333;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.listItemUserAvater {
+  position: absolute;
+  top: 5rpx;
+  right: 0;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+
+.listShowContainer .listItem .listItemInfo .listItemAbout .listItemInfoDesc {
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  padding-top: 40rpx;
+  color: #666;
+  font-size: 24rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/*------------------ 没有数据时 ----------------------*/
+
+.nodata-top {
+  margin-top: 108rpx;
+  text-align: center;
+}
+
+.nodata-top-logo {
+  width: 202rpx;
+  height: 176rpx;
+}
+
+.nodata-info-title {
+  margin-top: 32rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.nodata-info-text {
+  box-sizing: border-box;
+  margin-top: 40rpx;
+  padding: 0 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.nodata-btns {
+  margin-top: 84rpx;
+}
+
+.nodata-btn {
+  padding: 20rpx 0;
+  color: #fdb102;
+  font-size: 28rpx;
+  border: none;
+  background: none;
+}
+
+.imgNum{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.imgNum image{
+  width: 20px;
+  height: 20px;
+}
+.imgNum text{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 200;
+}
+.time{
+  float: left;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.time text{
+  font-size: 10px;
+  color: rgb(36, 33, 33);
+}

@@ -1,0 +1,97 @@
+<view class='chuangJianCollection'>
+    <!-- 一、作品集说明 -->
+    <view class='collection-description'>
+        <view class='title collection-description-title'>作品集说明</view>
+        <textarea 
+            class='collection-description-text'
+            value='{{ collectionDesc }}'
+            bindinput='collectionDesc'>
+        </textarea>
+    </view>
+    <!-- 二、封面上传 -->
+    <view class='imgUpload upload-Container'>
+        <view class='col-3'>
+            <view 
+                class='uploadBtn'
+                bindtap='uploadImg'>
+                <icon class='icon-xiangji'></icon>
+                <text class='uploadBtn-name'>封面</text>
+            </view>        
+        </view> 
+        <view 
+            class='col-3'>
+            <image 
+                class='uploadImg' 
+                mode='scaleToFill' 
+                src='{{ uploadImgFile }}'>
+            </image>        
+        </view> 
+        <!-- <view 
+            class='col-3'
+            wx-for='{{ uploadImgFile }}'
+            wx:for-index='idx'
+            wx:key='idx'
+            wx:for-item='listItem'>
+            <image 
+                class='uploadImg' 
+                mode='scaleToFill' 
+                src='{{ listItem }}'>
+            </image>        
+        </view>  -->
+        <!-- <view class='col-3'>
+            <image 
+                class='uploadImg' 
+                mode='scaleToFill' 
+                src='../../images/timg.jpg'>
+            </image>        
+        </view>
+        <view class='col-3'>
+            <image 
+                class='uploadImg' 
+                mode='scaleToFill' 
+                src='../../images/timg.jpg'>
+            </image>        
+        </view> 
+        <view class='col-3'>
+            <image 
+                class='uploadImg' 
+                mode='scaleToFill' 
+                src='../../images/timg.jpg'>
+            </image>        
+        </view>  -->
+    </view>
+    <!-- 三、作品集名称 -->
+    <view class='collection-name'>
+        <view class='title collection-description-title'>作品集名称</view>  
+        <input 
+            class='collection-description-name' 
+            bindinput='collectionName'
+            placeholder="示例：6岁那年"
+            value='{{ collectionName }}'
+            placeholder-style='collection-description-input-placeholder-style'></input> 
+    </view>
+    <!-- 四、学院姓名：功能跳转到我得学院，选择轩辕返回 -->
+    <view class='collection-student' wx:if='{{ userGrade == 2 || userGrade == 4 }}'>
+        <view class='title collection-description-title'>学员姓名</view>
+        <view class='selectBox'>
+          <view class='collection-description-name' bindtap='isSelect'>{{name}}</view>
+          <view style='select' wx:if='{{isselect}}'>
+          <view class='selectItem' bindtap='getSelect'>请选择...</view>
+          <view wx:for='{{listStudent}}' class='selectItem' data-name='{{item.myStudents}}' data-id='{{item.userId}}' bindtap='getSelect'>{{item.myStudents}}</view>
+      </view>
+    </view> 
+    </view>
+    <!-- 五、是否公开 -->
+    <view class='collection-isPublic'>
+        <view class='title collection-isPublic-title'>
+            是否公开<text>（可参加全国排名）</text>
+        </view>
+        <switch 
+            class='collection-isPublic-switch-btn' 
+            color='#FC9E3C'
+            checked='{{ ispublic }}'
+            bindchange="switch1Change"/>
+    </view>
+    <!-- 五、提交按钮 -->
+    <button class='submit-btn submit-switch-btn' catchtap='submitAll'>修改</button>
+</view>
